@@ -17,7 +17,7 @@ export function PageTransition({ children }: { children: ReactNode }) {
       initial={offset}
       animate={{ x: 0, y: 0 }}
       transition={{ duration: MOTION.duration, ease: MOTION.ease }}
-      className="flex flex-1 flex-col"
+      className="flex flex-1 flex-col overflow-x-clip"
     >
       {children}
     </m.div>

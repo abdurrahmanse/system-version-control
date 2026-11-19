@@ -17,7 +17,7 @@ export function SiteHeader() {
           <BrandMark />
         </div>
         <MegaNav />
-        <div className="flex items-center gap-2 justify-self-end">
+        <div className="flex items-center gap-1.5 justify-self-end sm:gap-2">
           <SearchTrigger />
           <HistoryMenu />
           <ThemeToggle />
