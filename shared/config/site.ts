@@ -38,6 +38,7 @@ export const NAV_GROUPS: NavGroup[] = [
     label: "Learn",
     icon: GraduationCap,
     items: [
+      { href: "/path", label: "Path", description: "Your step-by-step route, lesson after lesson.", icon: Route },
       { href: "/roadmap", label: "Roadmap", description: "Fifteen lessons from zero to Pro Max.", icon: Route },
       { href: "/guide", label: "Guide", description: "All 100 commands, step by step.", icon: Terminal },
       { href: "/practice", label: "Practice", description: "Put commands in the right order.", icon: Swords },
@@ -51,7 +52,6 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/concepts", label: "Concepts", description: "The mental models behind Git.", icon: ScrollText },
       { href: "/workflows", label: "Workflows", description: "Branching, merging, releasing.", icon: Workflow },
       { href: "/glossary", label: "Glossary", description: "Every term, A to Z.", icon: BookOpen },
-      { href: "/packages", label: "Toolbox", description: "Packages, their jobs and where used.", icon: Package },
     ],
   },
   {
@@ -59,6 +59,7 @@ export const NAV_GROUPS: NavGroup[] = [
     icon: Users,
     items: [
       { href: "/mentor", label: "AI Mentor", description: "The rules that keep the AI honest.", icon: Bot },
+      { href: "/packages", label: "Under the hood", description: "What this site is made of.", icon: Package },
       { href: "/about", label: "About", description: "Who this guide is for.", icon: Info },
       { href: "/faq", label: "FAQ", description: "Progress, privacy and more.", icon: CircleHelp },
       { href: "/changelog", label: "Changelog", description: "What changed and when.", icon: ScrollText },

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/roadmap/[slug]">)
 // `params` is read inside a Suspense boundary, as required by Cache Components.
 async function Lesson({ params }: Pick<PageProps<"/roadmap/[slug]">, "params">) {
   const { slug } = await params;
-  return <LessonView slug={slug} />;
+  return <LessonView slug={slug} tab="overview" />;
 }
 
 export default function Page({ params }: PageProps<"/roadmap/[slug]">) {

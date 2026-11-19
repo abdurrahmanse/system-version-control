@@ -3,7 +3,6 @@ import {
   BookCheck,
   Bot,
   CheckCheck,
-  CircleHelp,
   FileText,
   Hand,
   Hourglass,
@@ -18,7 +17,7 @@ import {
   Workflow,
 } from "lucide-react";
 
-import type { CtaCopy, HeroCopy, SectionCopy } from "@/shared/types/content";
+import type { HeroCopy, SectionCopy } from "@/shared/types/content";
 
 export const MENTOR_HERO: HeroCopy = {
   badge: "Verified · unbiased · read-only",
@@ -75,13 +74,6 @@ export const MENTOR_RULES = [
   },
 ] as const;
 
-export const MENTOR_SOURCES_SECTION: SectionCopy = {
-  numeral: "II",
-  icon: Search,
-  eyebrow: "Evidence ranking",
-  title: "Where facts come from",
-  description: "Higher on the list wins when sources disagree.",
-};
 export const MENTOR_SOURCES = [
   { text: "The tool itself: git help, --help, command output", links: [] },
   { text: "Installed files: node_modules README and types", links: [] },
@@ -95,13 +87,6 @@ export const MENTOR_SOURCES = [
   { text: "Blogs and forums: never sufficient alone", links: [] },
 ] as const;
 
-export const MENTOR_EXAMPLE_SECTION: SectionCopy = {
-  numeral: "IV",
-  icon: CircleHelp,
-  eyebrow: "In practice",
-  title: "What an honest answer looks like",
-  description: "Every claim carries a label so you know how much to trust it.",
-};
 export const MENTOR_EXAMPLE = {
   question: "Q: Why not just use git push --force?",
   verified: {
@@ -116,39 +101,20 @@ export const MENTOR_EXAMPLE = {
   unverified: { label: "Unverified", text: "GitHub settings paths can change. Confirm them in the GitHub docs." },
 } as const;
 
-export const MENTOR_GUARDRAILS_SECTION: SectionCopy = {
-  numeral: "V",
-  icon: Siren,
-  eyebrow: "Guardrails",
-  title: "Commands that always ask first",
-  description: "Configured in .claude/settings.json so risky actions need your permission.",
-};
 export const MENTOR_GUARDED = [
-  { cmd: "git push", href: "/guide/github-remote#step-54" },
-  { cmd: "git reset", href: "/guide/conflicts-and-undo#step-76" },
-  { cmd: "git clean", href: "/guide/daily-loop#step-29" },
-  { cmd: "git rebase", href: "/guide/advanced-history#step-84" },
-  { cmd: "git branch -D", href: "/guide/branching#step-49" },
-  { cmd: "git commit", href: "/guide/first-repository#step-16" },
-  { cmd: "git merge", href: "/guide/branching#step-47" },
-  { cmd: "gh pr merge", href: "/guide/pull-requests#step-70" },
+  { cmd: "git push", href: "/guide/github-remote/54" },
+  { cmd: "git reset", href: "/guide/conflicts-and-undo/76" },
+  { cmd: "git clean", href: "/guide/daily-loop/29" },
+  { cmd: "git rebase", href: "/guide/advanced-history/84" },
+  { cmd: "git branch -D", href: "/guide/branching/49" },
+  { cmd: "git commit", href: "/guide/first-repository/16" },
+  { cmd: "git merge", href: "/guide/branching/47" },
+  { cmd: "gh pr merge", href: "/guide/pull-requests/70" },
 ] as const;
 
-export const MENTOR_CTA: CtaCopy = {
-  icon: ShieldCheck,
-  title: "Learn with a mentor you can check",
-  description: "Verify any answer in five minutes with docs/ai/VERIFY.md.",
-  href: "/roadmap",
-  label: "Start the roadmap",
-};
-
 export const MENTOR_FLOW = {
-  numeral: "III",
-  icon: Workflow,
-  eyebrow: "How it answers",
-  title: "From your question to a labelled answer",
-  description: "Every answer goes through the same checks. Click a step to see where you can run it yourself.",
   label: "How the AI mentor produces an answer",
+  edges: ["asks", "reads", "labels", "checks"],
   nodes: [
     {
       title: "Your question",
@@ -179,3 +145,49 @@ export const MENTOR_FLOW = {
     },
   ],
 } as const;
+
+export const MENTOR_TOPICS = [
+  {
+    slug: "sources",
+    title: "Where facts come from",
+    text: "The ranking of sources the mentor must follow.",
+    icon: Search,
+  },
+  { slug: "how-it-answers", title: "How it answers", text: "From your question to a labelled answer.", icon: Workflow },
+  { slug: "guardrails", title: "Guardrails", text: "Commands that always ask you first.", icon: Siren },
+] as const;
+export type MentorTopicSlug = (typeof MENTOR_TOPICS)[number]["slug"];
+export const MENTOR_NAV = { label: "AI mentor sections", overview: "The rules" } as const;
+export const MENTOR_HUB = {
+  numeral: "II",
+  icon: ShieldCheck,
+  eyebrow: "Explore",
+  title: "More about the mentor",
+  description: "Each card is one short page.",
+} as const;
+
+export const MENTOR_TOPIC_INTROS: Record<MentorTopicSlug, HeroCopy> = {
+  sources: {
+    badge: "AI mentor",
+    icon: Search,
+    title: { top: "Where the facts", accent: "come from." },
+    description: "Higher on the list wins when sources disagree.",
+    primary: { label: "Next: how it answers", href: "/mentor/how-it-answers" },
+  },
+  "how-it-answers": {
+    badge: "AI mentor",
+    icon: Workflow,
+    title: { top: "From your question", accent: "to a labelled answer." },
+    description:
+      "Every answer goes through the same checks. Every claim carries a label so you know how much to trust it.",
+    primary: { label: "Next: guardrails", href: "/mentor/guardrails" },
+  },
+  guardrails: {
+    badge: "AI mentor",
+    icon: Siren,
+    title: { top: "Commands that", accent: "always ask first." },
+    description:
+      "Configured in .claude/settings.json so risky actions need your permission. Click a command to read its step.",
+    primary: { label: "Start the roadmap", href: "/roadmap" },
+  },
+};

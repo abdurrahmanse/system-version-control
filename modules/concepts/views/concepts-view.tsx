@@ -1,56 +1,33 @@
-import { AreasFlow } from "@/modules/concepts/components/areas-flow";
-import { BranchDiagram } from "@/modules/concepts/components/branch-diagram";
-import { CommandsTabs } from "@/modules/concepts/components/commands-tabs";
-import { ResetModes } from "@/modules/concepts/components/reset-modes";
-import {
-  CONCEPTS_AREAS,
-  CONCEPTS_COMMANDS,
-  CONCEPTS_CTA,
-  CONCEPTS_GRAPH,
-  CONCEPTS_HERO,
-  CONCEPTS_RESET,
-  CONCEPTS_VS,
-  CONCEPTS_VS_CARDS,
-  VOCAB,
-} from "@/modules/concepts/data/concepts";
+import { ConceptGraph } from "@/modules/concepts/components/concept-graph";
+import { CONCEPT_TOPICS, CONCEPTS_HERO, CONCEPTS_HUB, CONCEPTS_NAV } from "@/modules/concepts/data/concepts";
 import { CardGrid } from "@/shared/components/cards/card-grid";
 import { InfoCard } from "@/shared/components/cards/info-card";
-import { PageMain } from "@/shared/components/common/page-main";
-import { PageIntro } from "@/shared/components/hero/page-intro";
-import { CtaSection } from "@/shared/components/section/cta-section";
-import { Section } from "@/shared/components/section/section";
+import { SafeSection } from "@/shared/components/common/safe-section";
+import { TopicPage } from "@/shared/components/layout/topic-page";
+import { SectionHeader } from "@/shared/components/section/section-header";
 
+const NAV = [
+  { href: "/concepts", label: CONCEPTS_NAV.overview },
+  ...CONCEPT_TOPICS.map((t) => ({ href: `/concepts/${t.slug}`, label: t.title })),
+];
+
+// Hub: the concept map plus one card per sub-page. Short on purpose.
 export function ConceptsView() {
   return (
-    <PageMain>
-      <PageIntro copy={CONCEPTS_HERO} />
-      <Section copy={CONCEPTS_VS}>
-        <CardGrid className="md:grid-cols-2 lg:grid-cols-2">
-          {CONCEPTS_VS_CARDS.map((c) => (
-            <InfoCard key={c.title} icon={c.icon} title={c.title} text={c.text} href={c.href} />
-          ))}
-        </CardGrid>
-      </Section>
-      <Section copy={CONCEPTS_AREAS}>
-        <AreasFlow />
-      </Section>
-      <Section copy={CONCEPTS_GRAPH}>
-        <div className="mb-8">
-          <BranchDiagram />
-        </div>
+    <TopicPage intro={CONCEPTS_HERO} nav={{ items: NAV, label: CONCEPTS_NAV.label }}>
+      <section>
+        <SafeSection>
+          <ConceptGraph />
+        </SafeSection>
+      </section>
+      <section>
+        <SectionHeader copy={CONCEPTS_HUB} />
         <CardGrid>
-          {VOCAB.map((v) => (
-            <InfoCard key={v.title} icon={v.icon} title={v.title} text={v.text} href={v.href} />
+          {CONCEPT_TOPICS.map((t) => (
+            <InfoCard key={t.slug} icon={t.icon} title={t.title} text={t.text} href={`/concepts/${t.slug}`} />
           ))}
         </CardGrid>
-      </Section>
-      <Section copy={CONCEPTS_COMMANDS}>
-        <CommandsTabs />
-      </Section>
-      <Section copy={CONCEPTS_RESET}>
-        <ResetModes />
-      </Section>
-      <CtaSection copy={CONCEPTS_CTA} />
-    </PageMain>
+      </section>
+    </TopicPage>
   );
 }

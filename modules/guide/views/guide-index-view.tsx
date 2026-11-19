@@ -1,10 +1,10 @@
-import { Search, Terminal } from "lucide-react";
+import { Route, Search } from "lucide-react";
 import { Suspense } from "react";
 
 import { STEPS } from "@/modules/curriculum";
-import { ChapterGrid } from "@/modules/guide/components/chapter-grid";
-import { GuideSearch } from "@/modules/guide/components/guide-search";
-import { GUIDE_HERO, GUIDE_INDEX } from "@/modules/guide/data/guide";
+import { ChapterGraph } from "@/modules/guide/components/chapter-graph";
+import { GuideBrowser } from "@/modules/guide/components/guide-browser";
+import { GUIDE_HERO, GUIDE_INDEX, GUIDE_PATH } from "@/modules/guide/data/guide";
 import { PageMain } from "@/shared/components/common/page-main";
 import { SafeSection } from "@/shared/components/common/safe-section";
 import { PageIntro } from "@/shared/components/hero/page-intro";
@@ -17,14 +17,16 @@ export function GuideIndexView() {
       <PageIntro copy={GUIDE_HERO} />
       <Section
         copy={{
-          numeral: GUIDE_INDEX.numeral,
-          icon: Terminal,
-          eyebrow: GUIDE_INDEX.eyebrow,
-          title: GUIDE_INDEX.title,
-          description: GUIDE_INDEX.description,
+          numeral: GUIDE_PATH.numeral,
+          icon: Route,
+          eyebrow: GUIDE_PATH.eyebrow,
+          title: GUIDE_PATH.title,
+          description: GUIDE_PATH.description,
         }}
       >
-        <ChapterGrid />
+        <SafeSection>
+          <ChapterGraph />
+        </SafeSection>
       </Section>
       <Section
         copy={{
@@ -37,7 +39,7 @@ export function GuideIndexView() {
       >
         <SafeSection>
           <Suspense fallback={<Skeleton className="h-40 w-full" />}>
-            <GuideSearch steps={STEPS} />
+            <GuideBrowser steps={STEPS} />
           </Suspense>
         </SafeSection>
       </Section>

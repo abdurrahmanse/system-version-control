@@ -1,27 +1,25 @@
-import { Swords } from "lucide-react";
+import { Suspense } from "react";
 
-import { ChallengeList } from "@/modules/practice/components/challenge-list";
-import { PRACTICE_HERO, PRACTICE_UI } from "@/modules/practice/data/practice";
+import { ChallengeBrowser } from "@/modules/practice/components/challenge-browser";
+import { PRACTICE_HERO } from "@/modules/practice/data/practice";
 import { PageMain } from "@/shared/components/common/page-main";
+import { SafeSection } from "@/shared/components/common/safe-section";
 import { PageIntro } from "@/shared/components/hero/page-intro";
-import { Section } from "@/shared/components/section/section";
+import { Container } from "@/shared/components/layout/container";
+import { Skeleton } from "@/shared/ui/skeleton";
 
+// Hub: filter the challenges, then open one. Each challenge has its own page.
 export function PracticeView() {
   return (
     <PageMain>
       <PageIntro copy={PRACTICE_HERO} />
-      <Section
-        id="challenges"
-        copy={{
-          numeral: "I",
-          icon: Swords,
-          eyebrow: PRACTICE_UI.eyebrow,
-          title: PRACTICE_UI.title,
-          description: PRACTICE_UI.description,
-        }}
-      >
-        <ChallengeList />
-      </Section>
+      <Container className="py-12">
+        <SafeSection>
+          <Suspense fallback={<Skeleton className="h-40 w-full" />}>
+            <ChallengeBrowser />
+          </Suspense>
+        </SafeSection>
+      </Container>
     </PageMain>
   );
 }

@@ -44,6 +44,8 @@ export const UI = {
   searchError: "Search is unavailable right now. Please try again.",
   searchGroups: { pages: "Pages", lessons: "Lessons", steps: "Guide steps", terms: "Glossary" },
   filterPlaceholder: "Filter commands…",
+  filterClear: "Clear filters",
+  filterNoResults: "Nothing matches these filters.",
   filterAll: "All",
   resultsCount: (n: number) => `${n} result${n === 1 ? "" : "s"}`,
   stepOf: (n: number, total: number) => `Step ${n} of ${total}`,

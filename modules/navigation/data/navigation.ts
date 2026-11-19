@@ -8,6 +8,8 @@ export const NAVIGATION = {
   historyClear: "Clear history",
   historyCleared: "History cleared",
   current: "Current page",
+  lessonTabs: { commands: "Commands", checkpoints: "Checkpoints" },
+  stepTitle: (id: string, title: string) => `Step ${id}: ${title}`,
   maxEntries: 10,
   storageKey: "git-field-guide:history",
 } as const;

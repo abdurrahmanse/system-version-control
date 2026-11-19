@@ -39,9 +39,44 @@ export const ROADMAP_MAP = {
   numeral: "0",
   icon: Map,
   eyebrow: "The map",
-  title: "All fifteen lessons at a glance",
-  description: "Four levels, one line. Every stop is a lesson: click it to open the step-by-step page.",
+  title: "How the lessons connect",
+  description:
+    "Each link goes from a lesson to the lesson that builds on it. Hover a card to light up its connections, click to open it.",
   label: "Learning path map",
 } as const;
 
 export const LESSON_PATH = { label: "Lesson path", current: "Current lesson" } as const;
+
+export const ROADMAP_FILTERS = {
+  sectionNumeral: "I",
+  eyebrow: "Lessons",
+  title: "Browse and filter the lessons",
+  description:
+    "Search by topic or command, pick a level, or hide what you have already finished. The filters are saved in the URL.",
+  search: "Search lessons",
+  searchPlaceholder: "Search topics or commands…",
+  level: "Level",
+  hideDone: "Hide completed",
+  noResults: "No lesson matches. Try fewer filters.",
+} as const;
+
+export const LESSON_CONNECTIONS = {
+  title: "Connected topics",
+  label: "Topics connected to this lesson",
+  buildsOn: "builds on",
+  unlocks: "unlocks",
+  runCommands: "run the commands",
+  practise: "practise",
+  vocabulary: "vocabulary",
+  chapterPrefix: "Guide chapter",
+  challengePrefix: "Practice",
+  termsTitle: "Key terms",
+} as const;
+
+export const LESSON_TABS = {
+  label: "Lesson sections",
+  overview: "Overview",
+  commands: "Commands",
+  checkpoints: "Checkpoints",
+} as const;
+export type LessonTab = "overview" | "commands" | "checkpoints";

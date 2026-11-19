@@ -31,3 +31,11 @@ export const PRACTICE_UI = {
   listLabel: "Command sequence",
   solvedCount: (n: number, total: number) => `${n} of ${total} solved`,
 } as const;
+
+export const PRACTICE_FILTERS = {
+  level: "Level",
+  unsolved: "Unsolved only",
+  empty: "No challenge matches. Try fewer filters.",
+  open: "Open the challenge",
+  back: "All challenges",
+} as const;

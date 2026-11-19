@@ -168,3 +168,32 @@
     @apply font-code;
   }
 }
+
+/* Animated graph links and arrows. Disabled for users who prefer reduced motion. */
+@keyframes edge-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+@keyframes arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+.edge-flow {
+  stroke-dasharray: 6 6;
+  animation: edge-flow 1.1s linear infinite;
+}
+.arrow-nudge {
+  animation: arrow-nudge 1.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .edge-flow,
+  .arrow-nudge {
+    animation: none;
+  }
+}

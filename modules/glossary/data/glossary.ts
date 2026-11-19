@@ -16,3 +16,14 @@ export const GLOSSARY_UI = {
   empty: "No matching terms.",
   see: "Related command:",
 } as const;
+
+export const GLOSSARY_TERM = {
+  taughtIn: "taught in",
+  usedBy: "used by",
+  commandText: "Open the commands in the guide.",
+  graphLabel: "Where this term is taught and used",
+  graphTitle: "Where it appears",
+  definition: "Definition",
+  back: "All terms",
+  noLessons: "This term is not tied to one lesson. It appears throughout the guide.",
+} as const;

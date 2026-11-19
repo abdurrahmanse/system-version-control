@@ -3,21 +3,17 @@ import { groupFor, titleFor } from "@/modules/navigation/lib/titles";
 
 export type Crumb = { label: string; href?: string };
 
-const segments = (pathname: string) => pathname.split("/").filter(Boolean);
-
-// Breadcrumb trail for a pathname: Home > Group > Section > Detail. The last crumb has no link.
+// Breadcrumb trail for a pathname: Home > Group > every ancestor page > this page. The last crumb has no link.
 export function crumbsFor(pathname: string): Crumb[] {
-  const parts = segments(pathname);
+  const parts = pathname.split("/").filter(Boolean);
   if (parts.length === 0) return [];
   const crumbs: Crumb[] = [{ label: NAVIGATION.homeLabel, href: "/" }];
   const group = groupFor(pathname);
   if (group) crumbs.push({ label: group });
-  const sectionHref = `/${parts[0]}`;
-  if (parts.length === 1) {
-    crumbs.push({ label: titleFor(sectionHref) });
-  } else {
-    crumbs.push({ label: titleFor(sectionHref), href: sectionHref });
-    crumbs.push({ label: titleFor(pathname) });
-  }
+  parts.forEach((_, i) => {
+    const path = `/${parts.slice(0, i + 1).join("/")}`;
+    const last = i === parts.length - 1;
+    crumbs.push(last ? { label: titleFor(path) } : { label: titleFor(path), href: path });
+  });
   return crumbs;
 }

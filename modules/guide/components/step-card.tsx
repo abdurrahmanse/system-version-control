@@ -6,11 +6,11 @@ import { Callout } from "@/shared/components/common/callout";
 import { UI } from "@/shared/data/ui";
 import { Card, CardContent } from "@/shared/ui/card";
 
-export function StepCard({ step }: { step: GuideStep }) {
+export function StepCard({ step, page = false }: { step: GuideStep; page?: boolean }) {
   return (
     <Card id={`step-${step.id}`} className="scroll-mt-28">
       <CardContent className="space-y-4">
-        <StepHeader step={step} />
+        <StepHeader step={step} page={page} />
         <CommandBlock command={step.command} />
         <p className="text-sm text-muted-foreground">{step.explain}</p>
         {step.output ? (

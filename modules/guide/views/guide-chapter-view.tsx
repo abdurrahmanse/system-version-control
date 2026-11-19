@@ -17,7 +17,7 @@ export function GuideChapterView({ slug }: { slug: string }) {
       <ChapterHeader chapter={chapter} count={steps.length} />
       <Container className="py-12">
         <ContentColumn className="space-y-12">
-          <StepList steps={steps} />
+          <StepList steps={steps} variant="rows" />
           <ChapterNav slug={chapter.slug} />
         </ContentColumn>
       </Container>

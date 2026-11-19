@@ -1,42 +1,49 @@
 import { PackageChart } from "@/modules/toolbox/components/package-chart";
+import { PackageGraph } from "@/modules/toolbox/components/package-graph";
 import { PackageGroupCard } from "@/modules/toolbox/components/package-group-card";
 import { PACKAGE_GROUPS } from "@/modules/toolbox/data/packages";
 import {
   PACKAGES_CATALOG,
   PACKAGES_CHART,
-  PACKAGES_CTA,
+  PACKAGES_GRAPH,
   PACKAGES_HERO,
-  PACKAGES_STEPS,
-  PACKAGES_WORKFLOW,
+  PACKAGES_NAV,
 } from "@/modules/toolbox/data/toolbox";
+import { groupSlug } from "@/modules/toolbox/lib/package-graph";
 import { CardGrid } from "@/shared/components/cards/card-grid";
-import { NumberedSteps } from "@/shared/components/common/numbered-steps";
-import { PageMain } from "@/shared/components/common/page-main";
 import { SafeSection } from "@/shared/components/common/safe-section";
-import { PageIntro } from "@/shared/components/hero/page-intro";
-import { CtaSection } from "@/shared/components/section/cta-section";
-import { Section } from "@/shared/components/section/section";
+import { TopicPage } from "@/shared/components/layout/topic-page";
+import { SectionHeader } from "@/shared/components/section/section-header";
 
+export const PACKAGES_SUBNAV = [
+  { href: "/packages", label: PACKAGES_NAV.overview },
+  ...PACKAGE_GROUPS.map((g) => ({ href: `/packages/${groupSlug(g.title)}`, label: g.title })),
+];
+
+// Hub: the connection graph, a chart and one card per category (each category has its own page).
 export function ToolboxView() {
   return (
-    <PageMain>
-      <PageIntro copy={PACKAGES_HERO} />
-      <Section copy={PACKAGES_CHART}>
+    <TopicPage intro={PACKAGES_HERO} nav={{ items: PACKAGES_SUBNAV, label: PACKAGES_NAV.label }}>
+      <section>
+        <SectionHeader copy={PACKAGES_GRAPH} />
+        <SafeSection>
+          <PackageGraph />
+        </SafeSection>
+      </section>
+      <section>
+        <SectionHeader copy={PACKAGES_CHART} />
         <SafeSection>
           <PackageChart />
         </SafeSection>
-      </Section>
-      <Section copy={PACKAGES_CATALOG}>
+      </section>
+      <section>
+        <SectionHeader copy={PACKAGES_CATALOG} />
         <CardGrid>
           {PACKAGE_GROUPS.map((g) => (
-            <PackageGroupCard key={g.title} group={g} />
+            <PackageGroupCard key={g.title} group={g} href={`/packages/${groupSlug(g.title)}`} />
           ))}
         </CardGrid>
-      </Section>
-      <Section copy={PACKAGES_WORKFLOW}>
-        <NumberedSteps steps={PACKAGES_STEPS.map((text, i) => ({ title: `0${i + 1}`, text }))} />
-      </Section>
-      <CtaSection copy={PACKAGES_CTA} />
-    </PageMain>
+      </section>
+    </TopicPage>
   );
 }

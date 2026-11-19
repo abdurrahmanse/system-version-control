@@ -1,7 +1,4 @@
-import { STEPS } from "@/modules/curriculum";
-import { LESSONS } from "@/modules/curriculum";
-import { TERMS } from "@/modules/curriculum";
-import { lessonCode, lessonHref } from "@/modules/curriculum";
+import { lessonCode, lessonHref, LESSONS, stepHref, STEPS, TERMS, termSlug } from "@/modules/curriculum";
 import { ALL_NAV } from "@/shared/config/site";
 import { type UI } from "@/shared/data/ui";
 
@@ -38,7 +35,7 @@ export function buildSearchIndex(): SearchItem[] {
       group: "steps" as const,
       title: s.title,
       subtitle: s.command,
-      href: `/guide/${s.chapter}#step-${s.id}`,
+      href: stepHref(s),
       keywords: `${s.title} ${s.command} ${s.explain}`,
     })),
     ...TERMS.map((t) => ({
@@ -46,7 +43,7 @@ export function buildSearchIndex(): SearchItem[] {
       group: "terms" as const,
       title: t.term,
       subtitle: t.definition,
-      href: `/glossary?q=${encodeURIComponent(t.term)}`,
+      href: `/glossary/${termSlug(t.term)}`,
       keywords: `${t.term} ${t.definition}`,
     })),
   ];

@@ -26,8 +26,8 @@ test("progress persists across reloads", async ({ page }) => {
 });
 
 test("a practice challenge can be checked", async ({ page }) => {
-  await page.goto("/practice");
-  await page.getByRole("button", { name: "Check order" }).first().click();
+  await page.goto("/practice/ship-feature");
+  await page.getByRole("button", { name: "Check order" }).click();
   await expect(page.getByText("Not quite").first()).toBeVisible();
 });
 

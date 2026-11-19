@@ -23,8 +23,29 @@ export const GUIDE_INDEX = {
   searchNumeral: "II",
 } as const;
 
-export const GUIDE_CHAPTER = {
-  stepsLabel: "steps",
-  startHere: "Start here",
-  warning: "Danger",
+export const GUIDE_PATH = {
+  numeral: "I",
+  eyebrow: "The route",
+  title: "Ten chapters, one route",
+  description:
+    "Follow the line from chapter 1 to 10. A ticked chapter has all of its steps done. Click a chapter to open it.",
+  label: "Route through the ten guide chapters",
+  stepsLabel: (n: number) => `${n} steps`,
+} as const;
+
+export const GUIDE_FILTERS = {
+  chapter: "Chapter",
+  chapterAll: "All chapters",
+  level: "Level",
+  warningsOnly: "Warnings only",
+  hideDone: "Hide completed",
+  empty: "No step matches. Try fewer filters.",
+} as const;
+
+export const GUIDE_STEP = {
+  dangerLabel: "Has a warning",
+  allInChapter: "All steps in this chapter",
+  relatedLesson: "Learn this in",
+  nextStep: "Next step",
+  previousStep: "Previous step",
 } as const;

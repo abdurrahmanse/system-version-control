@@ -11,7 +11,7 @@ import { LinkArrow } from "@/shared/components/common/link-arrow";
 import { Badge } from "@/shared/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared/ui/card";
 
-export function ChallengeCard({ challenge }: { challenge: Challenge }) {
+export function ChallengeCard({ challenge, page = false }: { challenge: Challenge; page?: boolean }) {
   const solved = useProgressStore((s) => Boolean(s.challenges[challenge.id]));
   return (
     <Card>
@@ -25,7 +25,11 @@ export function ChallengeCard({ challenge }: { challenge: Challenge }) {
             </Badge>
           ) : null}
         </div>
-        <CardTitle className="font-heading text-2xl">{challenge.title}</CardTitle>
+        {page ? (
+          <h1 className="font-heading text-3xl font-bold">{challenge.title}</h1>
+        ) : (
+          <CardTitle className="font-heading text-2xl">{challenge.title}</CardTitle>
+        )}
         <CardDescription>
           <strong>{T.goal}:</strong> {challenge.goal}
         </CardDescription>

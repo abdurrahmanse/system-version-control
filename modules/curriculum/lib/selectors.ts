@@ -1,7 +1,8 @@
 // Pure selectors over the static content in /data. No UI strings live here.
 import { TERMS } from "@/modules/curriculum/data/glossary";
 import { CHAPTERS, type ChapterSlug, STEPS } from "@/modules/curriculum/data/guide";
-import { LESSON_DETAILS, LESSONS, type Level } from "@/modules/curriculum/data/lessons";
+import { LESSON_TERMS } from "@/modules/curriculum/data/lesson-graph";
+import { LESSON_DETAILS, LESSONS, type Level, LEVELS } from "@/modules/curriculum/data/lessons";
 
 export const getChapter = (slug: string) => CHAPTERS.find((c) => c.slug === slug);
 export const getChapterIndex = (slug: string) => CHAPTERS.findIndex((c) => c.slug === slug);
@@ -38,3 +39,21 @@ export const termsByLetter = () => {
   }
   return map;
 };
+
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+export const levelSlug = (level: Level) => slugify(level);
+export const levelFromSlug = (slug: string) => LEVELS.find((l) => slugify(l.name) === slug);
+
+export const termSlug = (term: string) => slugify(term);
+export const getTermBySlug = (slug: string) => TERMS.find((t) => termSlug(t.term) === slug);
+
+export const stepHref = (step: { chapter: string; id: number }) => `/guide/${step.chapter}/${step.id}`;
+export const getStep = (id: number) => STEPS.find((s) => s.id === id);
+
+// Lessons that introduce a glossary term.
+export const lessonsIntroducing = (term: string) => LESSONS.filter((l) => (LESSON_TERMS[l.n] ?? []).includes(term));

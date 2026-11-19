@@ -3,20 +3,28 @@ import { expect, test } from "@playwright/test";
 
 const PAGES = [
   "/",
+  "/path",
   "/roadmap",
+  "/roadmap/undo",
+  "/roadmap/undo/commands",
+  "/guide",
   "/guide/setup",
+  "/guide/setup/1",
   "/concepts",
-  "/workflows",
+  "/concepts/reset",
+  "/workflows/strategies",
+  "/workflows/undo",
   "/glossary",
+  "/glossary/commit",
   "/practice",
+  "/practice/ship-feature",
   "/progress",
+  "/progress/lessons",
   "/packages",
   "/mentor",
   "/contact",
   "/faq",
   "/about",
-  "/changelog",
-  "/privacy",
 ];
 
 for (const scheme of ["light", "dark"] as const) {

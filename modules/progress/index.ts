@@ -1,7 +1,11 @@
 export { LessonDoneButton } from "@/modules/progress/components/lesson-done-button";
+export { LessonGraph } from "@/modules/progress/components/lesson-graph";
 export { ProgressHydrator } from "@/modules/progress/components/progress-hydrator";
 export { StepDoneToggle } from "@/modules/progress/components/step-done-toggle";
+export { PROGRESS_VIEWS } from "@/modules/progress/data/progress";
+export { useProgress } from "@/modules/progress/hooks/use-progress";
 export { levelProgress, overall } from "@/modules/progress/lib/progress";
 export { paceForGoal } from "@/modules/progress/lib/study-plan";
 export { useProgressStore } from "@/modules/progress/store/progress-store";
+export { ProgressSectionView } from "@/modules/progress/views/progress-section-view";
 export { ProgressView } from "@/modules/progress/views/progress-view";

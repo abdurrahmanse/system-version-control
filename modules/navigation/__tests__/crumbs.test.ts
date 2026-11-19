@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { crumbsFor, titleFor } from "@/modules/navigation";
+import { allSitePaths, crumbsFor, titleFor } from "@/modules/navigation";
 
 describe("titleFor", () => {
   it("names top-level pages, lessons and chapters", () => {
@@ -32,5 +32,32 @@ describe("crumbsFor", () => {
 
   it("handles pages outside the nav groups", () => {
     expect(crumbsFor("/terms")).toEqual([{ label: "Home", href: "/" }, { label: "Terms" }]);
+  });
+});
+
+describe("every page of the site", () => {
+  const paths = allSitePaths();
+
+  it("lists a large, unique set of pages", () => {
+    expect(paths.length).toBeGreaterThan(200);
+    expect(new Set(paths).size).toBe(paths.length);
+  });
+
+  it("has a real title for each page (never the raw URL)", () => {
+    for (const path of paths) {
+      const title = titleFor(path);
+      expect(title, path).not.toBe("");
+      expect(title, path).not.toBe(path);
+    }
+  });
+
+  it("builds a breadcrumb trail ending in the page itself", () => {
+    expect(crumbsFor("/guide/branching/47").map((c) => c.label)).toEqual([
+      "Home",
+      "Learn",
+      "Guide",
+      "5. Branching and merging",
+      "Step 47: Merge a branch",
+    ]);
   });
 });

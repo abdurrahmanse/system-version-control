@@ -4,7 +4,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 export function FlowArrow() {
   return (
     <li aria-hidden className="flex items-center justify-center text-signal">
-      <ArrowRight className="hidden size-5 md:block" />
+      <ArrowRight className="arrow-nudge hidden size-5 md:block" />
       <ArrowDown className="size-5 md:hidden" />
     </li>
   );
