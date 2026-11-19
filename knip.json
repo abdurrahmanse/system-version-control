@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "app/**/{page,layout,template,loading,error,global-error,not-found,route,manifest,robots,sitemap,opengraph-image}.{ts,tsx}",
+    "scripts/*.ts",
+    "e2e/**/*.ts",
+    "**/*.test.{ts,tsx}",
+    "tests/mocks/server-only.ts"
+  ],
+  "project": ["app/**", "modules/**", "shared/**", "scripts/**", "e2e/**", "tests/**"],
+  "ignore": ["shared/ui/**"],
+  "ignoreExportsUsedInFile": true
+}

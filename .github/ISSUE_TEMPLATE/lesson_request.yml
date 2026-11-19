@@ -1,0 +1,16 @@
+name: Lesson or topic request
+description: Suggest a Git or GitHub topic to cover
+labels: [enhancement]
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: Topic
+      description: What should the lesson teach, and which commands should it cover?
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options: [Beginner, Intermediate, Advanced, Pro Max]

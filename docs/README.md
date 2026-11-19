@@ -20,6 +20,8 @@
 ## সঙ্গী ডকুমেন্ট
 - **[ROADMAP.md](ROADMAP.md): সম্পূর্ণ শেখার রোডম্যাপ (জিরো → Pro Max)**
 - [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md): সাইটের ডিজাইন সিস্টেম
+- [ARCHITECTURE.md](ARCHITECTURE.md): প্রজেক্টের কাঠামো (modular monolith) ও নিয়ম
+- [GUIDE.md](GUIDE.md): ১০০ ধাপের কমান্ড গাইড (সাইটের ডেটা থেকে অটো-জেনারেটেড)
 - [CHEATSHEET.md](CHEATSHEET.md): দ্রুত রেফারেন্স
 - [PACKAGES.md](PACKAGES.md): ইনস্টল করা প্যাকেজগুলোর গাইড
 - [ai/CONSTITUTION.md](ai/CONSTITUTION.md): AI-এর নিয়ম

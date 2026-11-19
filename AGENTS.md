@@ -14,6 +14,8 @@
 - ধ্বংসাত্মক কমান্ডের আগে ঝুঁকি ব্যাখ্যা + dry-run + সম্মতি।
 - বিকল্পগুলো নিরপেক্ষভাবে দেখাও; মতামত আলাদা করে বলো।
 - কোড স্টাইল ও টুল: `pnpm` ব্যবহার করো। সংশ্লিষ্ট প্যাকেজ নির্দেশিকা: [docs/PACKAGES.md](docs/PACKAGES.md)।
+- **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) মানো। modular monolith: `app/` (routing) → `modules/` (feature) → `shared/`। এক মডিউল অন্যটাকে শুধু `index.ts`/`server.ts` দিয়ে ধরবে। UI টেক্সট কখনো কম্পোনেন্টে লিখবে না, মডিউলের `data/` ফোল্ডারে রাখো। পেজের প্রস্থ শুধু `Container` থেকে। কোড বদলালে `pnpm verify` চালাও।
+- **ভুলে করো না:** ডেভ সার্ভার (`pnpm dev`) চলার সময় একই ফোল্ডারে `pnpm build` চালিও না (`.next` নষ্ট হয়); আলাদা কপিতে বিল্ড করো। কখনো `husky --help` চালিও না।
 - UI: [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) মানো: "Paper · Ink · Signal" (minimal + brutalist + classic), থিম `next-themes` দিয়ে (light/dark/system)। শুধু shadcn/Radix কম্পোনেন্ট ও টোকেন; হার্ডকোড রঙ বা কাস্টম CSS ফাইল নয়।
 - লেসনের তথ্য বদলালে `lib/lessons.ts` ও `docs/ROADMAP.md` একসাথে মিলিয়ে রাখো।
 

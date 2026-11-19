@@ -1,12 +1,26 @@
+import bundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
 
+// Webpack-based analyzer: run with `pnpm analyze:webpack`. (`pnpm analyze` uses Next's built-in Turbopack analyzer.)
+const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
+
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+];
+
 const nextConfig: NextConfig = {
-  /* config options here */
   experimental: {
     agentFeedback: true,
+    optimizePackageImports: ["lucide-react", "recharts", "date-fns", "motion"],
   },
   cacheComponents: true,
+  reactCompiler: true,
   partialPrefetching: true,
+  reactStrictMode: true,
+  poweredByHeader: false,
   turbopack: {
     rules: {
       "*.css": {
@@ -15,6 +29,9 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async headers() {
+    return [{ source: "/:path*", headers: securityHeaders }];
+  },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

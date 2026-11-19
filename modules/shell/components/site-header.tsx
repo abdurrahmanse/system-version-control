@@ -1,0 +1,29 @@
+import { HistoryMenu } from "@/modules/navigation";
+import { SearchTrigger } from "@/modules/search";
+import { BrandMark } from "@/modules/shell/components/brand-mark";
+import { HeaderStrip } from "@/modules/shell/components/header-strip";
+import { MegaNav } from "@/modules/shell/components/mega-nav";
+import { MobileNav } from "@/modules/shell/components/mobile-nav";
+import { ThemeToggle } from "@/modules/theme";
+import { Container } from "@/shared/components/layout/container";
+
+// Three-column grid keeps the navigation exactly in the middle regardless of brand/action widths.
+export function SiteHeader() {
+  return (
+    <header className="sticky top-0 z-50 border-b-4 border-double border-edge bg-background/95 backdrop-blur">
+      <HeaderStrip />
+      <Container className="grid h-14 grid-cols-[1fr_auto_1fr] items-center gap-3">
+        <div className="justify-self-start">
+          <BrandMark />
+        </div>
+        <MegaNav />
+        <div className="flex items-center gap-2 justify-self-end">
+          <SearchTrigger />
+          <HistoryMenu />
+          <ThemeToggle />
+          <MobileNav />
+        </div>
+      </Container>
+    </header>
+  );
+}

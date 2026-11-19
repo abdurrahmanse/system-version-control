@@ -1,5 +1,8 @@
 # লেসন ১৩: Git hooks: husky, lint-staged, commitlint
 
+> **এই রিপোতে আগে থেকেই কনফিগার করা:** `.husky/pre-commit` (lint-staged), `.husky/commit-msg` (commitlint), `.husky/pre-push` (architecture + tests)। ফাইলগুলো পড়ুন; একটা খারাপ কমিট বার্তা দিয়ে হুক পরীক্ষা করুন; তারপর নিজের নিয়ম যোগ করে PR করুন।
+
+
 **লক্ষ্য:** কমিটের আগেই স্বয়ংক্রিয়ভাবে ভুল ধরা: খারাপ কোড বা খারাপ বার্তা কমিটই হবে না।
 **আগে:** লেসন ০৩ (Conventional Commits), ১২ (CI)। প্যাকেজগুলো ইনস্টল করা আছে, কনফিগ বাকি।
 

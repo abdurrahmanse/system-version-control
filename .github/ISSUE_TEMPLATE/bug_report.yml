@@ -1,0 +1,22 @@
+name: Bug report
+description: Something is wrong or broken
+labels: [bug]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Page or step
+      description: The URL, lesson or guide step number.
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include the command and your Git version (git --version) if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
