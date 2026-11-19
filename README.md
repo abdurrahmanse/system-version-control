@@ -34,7 +34,7 @@ is in [docs/PACKAGES.md](docs/PACKAGES.md).
 
 ## Getting started
 
-Requirements: Node.js 20.9 or newer and [pnpm](https://pnpm.io) 11.
+Requirements: Node.js 22.13 or newer (pnpm 11 needs it) and [pnpm](https://pnpm.io) 11.
 
 ```bash
 pnpm install
@@ -99,6 +99,8 @@ Details and a checklist for adding a module: [docs/ARCHITECTURE.md](docs/ARCHITE
   the `.next` folder, so do not run a build while the dev server is running.
 - **A Git hook runs a strange folder**: never run `pnpm exec husky --help`. husky treats the argument as a hooks directory and
   rewrites `core.hooksPath`. Fix with `git config --unset core.hooksPath && pnpm install`.
+- **Deploy fails at `pnpm install`** (for example on Vercel): pnpm 11 requires Node 22.13 or newer. Set the project's Node.js version to 22.x or 24.x
+  (Vercel: Project Settings, General, Node.js Version). `engines.node` in `package.json` already declares it.
 - **Port 3000 is busy**: another dev server is running. Use `pnpm dev -p 3001` or stop the other one.
 
 ## Security
