@@ -16,12 +16,12 @@ export default function OpengraphImage() {
         flexDirection: "column",
         justifyContent: "center",
         padding: 80,
-        background: "#f7f3e9",
-        color: "#1a1410",
-        border: "16px solid #1a1410",
+        background: "#f7f9fc",
+        color: "#0f141d",
+        border: "16px solid #0f141d",
       }}
     >
-      <div style={{ fontSize: 28, letterSpacing: 6, textTransform: "uppercase", color: "#d93a1c" }}>
+      <div style={{ fontSize: 28, letterSpacing: 6, textTransform: "uppercase", color: "#ce0e1a" }}>
         {SITE.ogEyebrow}
       </div>
       <div style={{ fontSize: 96, fontWeight: 700, marginTop: 16 }}>{SITE.name}</div>

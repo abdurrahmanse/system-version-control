@@ -1,4 +1,4 @@
-# Git Field Guide
+# System Version Control
 
 **Learn version control from zero to Pro Max, on a real repository.**
 
@@ -80,6 +80,7 @@ Details and a checklist for adding a module: [docs/ARCHITECTURE.md](docs/ARCHITE
 | [docs/GUIDE.md](docs/GUIDE.md) | The 100-step command guide (generated) |
 | [docs/lessons/](docs/lessons) | The 15 lessons in depth |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Structure, rules and conventions |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Deploying to Vercel, environment variables, troubleshooting |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Colours, type, components |
 | [docs/PACKAGES.md](docs/PACKAGES.md) | Every package, its job and where it is used (generated) |
 | [docs/ai/CONSTITUTION.md](docs/ai/CONSTITUTION.md) | Rules for AI agents working in this repo |

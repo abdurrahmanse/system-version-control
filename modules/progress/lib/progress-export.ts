@@ -9,4 +9,4 @@ export const buildExport = (data: PersistedProgress, now: Date): ProgressExport 
   data,
 });
 
-export const exportFileName = (now: Date) => `git-field-guide-progress-${now.toISOString().slice(0, 10)}.json`;
+export const exportFileName = (now: Date) => `system-version-control-progress-${now.toISOString().slice(0, 10)}.json`;

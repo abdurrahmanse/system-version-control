@@ -60,43 +60,44 @@
 }
 
 /* Paper · Ink · Signal. Three colours only; every surface and line is derived from them.
-   `edge` = lines and outlines, `shadow-hard` = the offset brutalist shadow. */
+   `edge` = lines and outlines, `shadow-hard` = the offset brutalist shadow.
+   Light: cool "porcelain" page, pure white cards, deep navy ink, crimson signal. */
 :root {
-  --background: oklch(0.962 0.016 88);
-  --foreground: oklch(0.17 0.012 55);
-  --card: oklch(0.988 0.008 88);
-  --card-foreground: oklch(0.17 0.012 55);
-  --popover: oklch(0.988 0.008 88);
-  --popover-foreground: oklch(0.17 0.012 55);
-  --primary: oklch(0.17 0.012 55);
-  --primary-foreground: oklch(0.962 0.016 88);
-  --secondary: oklch(0.925 0.022 88);
-  --secondary-foreground: oklch(0.17 0.012 55);
-  --muted: oklch(0.925 0.022 88);
-  --muted-foreground: oklch(0.42 0.016 60);
-  --accent: oklch(0.925 0.022 88);
-  --accent-foreground: oklch(0.17 0.012 55);
-  --signal: oklch(0.53 0.2 32);
+  --background: oklch(0.982 0.004 255);
+  --foreground: oklch(0.19 0.02 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.02 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.02 265);
+  --primary: oklch(0.19 0.02 265);
+  --primary-foreground: oklch(0.99 0.002 255);
+  --secondary: oklch(0.955 0.006 255);
+  --secondary-foreground: oklch(0.19 0.02 265);
+  --muted: oklch(0.955 0.006 255);
+  --muted-foreground: oklch(0.47 0.02 262);
+  --accent: oklch(0.955 0.006 255);
+  --accent-foreground: oklch(0.19 0.02 265);
+  --signal: oklch(0.54 0.215 27);
   --destructive: oklch(0.52 0.22 27);
-  --edge: oklch(0.17 0.012 55);
-  --shadow-hard: oklch(0.17 0.012 55);
-  --border: oklch(0.17 0.012 55);
-  --input: oklch(0.17 0.012 55);
-  --ring: oklch(0.53 0.2 32);
-  --chart-1: oklch(0.53 0.2 32);
-  --chart-2: oklch(0.17 0.012 55);
-  --chart-3: oklch(0.42 0.016 60);
-  --chart-4: oklch(0.65 0.02 80);
-  --chart-5: oklch(0.8 0.02 85);
+  --edge: oklch(0.24 0.02 265);
+  --shadow-hard: oklch(0.19 0.02 265);
+  --border: oklch(0.24 0.02 265);
+  --input: oklch(0.24 0.02 265);
+  --ring: oklch(0.54 0.215 27);
+  --chart-1: oklch(0.54 0.215 27);
+  --chart-2: oklch(0.19 0.02 265);
+  --chart-3: oklch(0.47 0.02 262);
+  --chart-4: oklch(0.7 0.02 262);
+  --chart-5: oklch(0.85 0.01 262);
   --radius: 0rem;
-  --sidebar: oklch(0.988 0.008 88);
-  --sidebar-foreground: oklch(0.17 0.012 55);
-  --sidebar-primary: oklch(0.17 0.012 55);
-  --sidebar-primary-foreground: oklch(0.962 0.016 88);
-  --sidebar-accent: oklch(0.925 0.022 88);
-  --sidebar-accent-foreground: oklch(0.17 0.012 55);
-  --sidebar-border: oklch(0.17 0.012 55);
-  --sidebar-ring: oklch(0.53 0.2 32);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.19 0.02 265);
+  --sidebar-primary: oklch(0.19 0.02 265);
+  --sidebar-primary-foreground: oklch(0.99 0.002 255);
+  --sidebar-accent: oklch(0.955 0.006 255);
+  --sidebar-accent-foreground: oklch(0.19 0.02 265);
+  --sidebar-border: oklch(0.24 0.02 265);
+  --sidebar-ring: oklch(0.54 0.215 27);
 }
 
 /* Dark: deep ink-black with a cool undertone, cream text and a vivid signal red.

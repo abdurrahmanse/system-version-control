@@ -12,7 +12,7 @@ describe("progress export / import", () => {
     const backup = buildExport(data, now);
     expect(progressExportSchema.safeParse(backup).success).toBe(true);
     expect(backup.exportedAt).toBe("2026-02-03T04:05:06.000Z");
-    expect(exportFileName(now)).toBe("git-field-guide-progress-2026-02-03.json");
+    expect(exportFileName(now)).toBe("system-version-control-progress-2026-02-03.json");
   });
 
   it("validates a good backup and summarises it", () => {

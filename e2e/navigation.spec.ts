@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
 
 test("breadcrumbs show where you are and link to every parent", async ({ page }) => {
   await page.goto("/roadmap/undo");
@@ -17,10 +17,16 @@ test("the trail remembers the page you came from and offers a way back", async (
   await expect(page).toHaveURL(/\/roadmap$/);
 });
 
+// A visit is recorded after the page hydrates, so wait until it is stored before moving on.
+async function visit(page: Page, path: string) {
+  await page.goto(path);
+  await page.waitForFunction((p) => (sessionStorage.getItem("git-field-guide:history") ?? "").includes(`"${p}"`), path);
+}
+
 test("history menu lists the pages you visited", async ({ page }) => {
-  await page.goto("/");
-  await page.goto("/guide");
-  await page.goto("/glossary");
+  await visit(page, "/");
+  await visit(page, "/guide");
+  await visit(page, "/glossary");
   await page.getByRole("button", { name: "Recently visited" }).click();
   const list = page.getByRole("dialog");
   await expect(list.getByRole("link", { name: /Glossary/ })).toBeVisible();

@@ -26,7 +26,7 @@ export const PAGE_META = {
   contact: { title: "Contact", description: "Report a mistake or suggest a lesson." },
   about: { title: "About", description: "Who this guide is for and how its content is written." },
   faq: { title: "FAQ", description: "Answers about progress, privacy and the AI mentor." },
-  changelog: { title: "Changelog", description: "Release notes for the Git Field Guide." },
+  changelog: { title: "Changelog", description: "Release notes for System Version Control." },
   privacy: { title: "Privacy", description: "What this site stores on your device and what it does not." },
   terms: { title: "Terms", description: "Plain-language terms of use." },
   mentor: { title: "AI Mentor", description: "The rules that keep the AI mentor honest, unbiased and safe." },

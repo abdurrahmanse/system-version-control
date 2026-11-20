@@ -19,8 +19,8 @@ import {
 } from "lucide-react";
 
 export const SITE = {
-  name: "Git Field Guide",
-  shortName: "Field Guide",
+  name: "System Version Control",
+  shortName: "System Version Control",
   tagline: "Version control, from zero to Pro Max",
   description:
     "A zero-to-advanced field guide to version control with Git and GitHub: roadmap, 100-step command guide, concepts, practice and an AI mentor with rules.",
@@ -77,7 +77,7 @@ export const FOOTER_LINKS = [
 ] as const;
 
 export const HEADER = {
-  stripLeft: "Vol. I · A field guide to version control",
+  stripLeft: "Vol. I · Learn Git and GitHub, step by step",
   stripRight: "Zero → Pro Max",
   menuTitle: "Menu",
   menuAria: "Main",
@@ -87,6 +87,6 @@ export const HEADER = {
 } as const;
 
 export const FOOTER = {
-  copyright: "Git Field Guide · Built for learning Git and GitHub",
+  copyright: "System Version Control · Built for learning Git and GitHub",
   linksLabel: "Footer",
 } as const;
