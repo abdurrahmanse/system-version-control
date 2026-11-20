@@ -8,6 +8,7 @@ import {
   LESSONS,
   levelFromSlug,
 } from "@/modules/curriculum";
+import { EXAMPLE_PAGES } from "@/modules/example";
 import { MENTOR_TOPICS } from "@/modules/mentor";
 import { NAVIGATION } from "@/modules/navigation/data/navigation";
 import { PROGRESS_VIEWS } from "@/modules/progress";
@@ -60,6 +61,8 @@ export function titleFor(pathname: string): string {
       return topicTitle(CONCEPT_TOPICS, second) ?? second;
     case "workflows":
       return topicTitle(WF_TOPICS, second) ?? second;
+    case "example":
+      return topicTitle(EXAMPLE_PAGES, second) ?? second;
     case "mentor":
       return topicTitle(MENTOR_TOPICS, second) ?? second;
     case "progress":

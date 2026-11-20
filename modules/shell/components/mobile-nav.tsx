@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 
-import { HEADER, HOME_NAV, NAV_GROUPS } from "@/shared/config/site";
+import { HEADER, HOME_NAV, NAV_GROUPS, PRIMARY_LINKS } from "@/shared/config/site";
 import { UI } from "@/shared/data/ui";
 import { Button } from "@/shared/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/shared/ui/sheet";
@@ -31,6 +31,12 @@ export function MobileNav() {
             <HOME_NAV.icon className="size-4" />
             {HOME_NAV.label}
           </Link>
+          {PRIMARY_LINKS.map(({ href, label, icon: Icon }) => (
+            <Link key={href} href={href} onClick={close} className={linkClass}>
+              <Icon className="size-4" />
+              {label}
+            </Link>
+          ))}
           {NAV_GROUPS.map((group) => (
             <div key={group.label}>
               <p className="px-3 pb-1 font-label text-xs tracking-[0.2em] text-muted-foreground uppercase">

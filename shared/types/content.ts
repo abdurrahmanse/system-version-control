@@ -35,3 +35,16 @@ export type FlowNodeData = {
 export type DecisionAnswer = { answer: string; text?: string; command?: string; href?: string; danger?: boolean };
 export type Decision = { question: string; yes: DecisionBranch; no: DecisionBranch };
 export type DecisionBranch = Decision | DecisionAnswer;
+
+// ---- branch graph ----
+export type BranchLane = { id: string; label: string };
+// `col` is the horizontal position (0-based). Commits in the same lane are joined in column order.
+export type BranchCommit = { id: string; lane: string; col: number; label?: string; tag?: string };
+// A curve between commits in different lanes: a branch starting or a merge.
+export type BranchLink = { from: string; to: string; label?: string };
+export type BranchGraphData = {
+  label: string;
+  lanes: readonly BranchLane[];
+  commits: readonly BranchCommit[];
+  links: readonly BranchLink[];
+};

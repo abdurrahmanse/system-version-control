@@ -1,5 +1,6 @@
 import { CONCEPT_TOPICS } from "@/modules/concepts";
 import { CHALLENGES, CHAPTERS, LESSONS, lessonSlug, stepHref, STEPS, TERMS, termSlug } from "@/modules/curriculum";
+import { EXAMPLE_PAGES } from "@/modules/example";
 import { MENTOR_TOPICS } from "@/modules/mentor";
 import { PROGRESS_VIEWS } from "@/modules/progress";
 import { groupSlug, PACKAGE_GROUPS } from "@/modules/toolbox";
@@ -24,6 +25,7 @@ export function allSitePaths(): string[] {
       ...STEPS.map(stepHref),
       ...CONCEPT_TOPICS.map((t) => `/concepts/${t.slug}`),
       ...WF_TOPICS.map((t) => `/workflows/${t.slug}`),
+      ...EXAMPLE_PAGES.map((page) => `/example/${page.slug}`),
       ...MENTOR_TOPICS.map((t) => `/mentor/${t.slug}`),
       ...PROGRESS_VIEWS.map((v) => `/progress/${v.slug}`),
       ...TRACKS.flatMap((track) => [

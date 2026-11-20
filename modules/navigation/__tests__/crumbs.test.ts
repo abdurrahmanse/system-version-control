@@ -9,6 +9,8 @@ describe("titleFor", () => {
     expect(titleFor("/roadmap/undo")).toBe("Undo anything");
     expect(titleFor("/guide/branching")).toBe("5. Branching and merging");
     expect(titleFor("/privacy")).toBe("Privacy");
+    expect(titleFor("/example")).toBe("Example");
+    expect(titleFor("/example/branches")).toBe("Branches");
     expect(titleFor("/tracks")).toBe("Tracks");
     expect(titleFor("/tracks/beginner")).toBe("Beginner");
     expect(titleFor("/tracks/beginner/practice")).toBe("Practice");

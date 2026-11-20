@@ -17,6 +17,10 @@ export const PAGE_META = {
     description: "Branching strategies, merge types, pull request lifecycle and releases.",
   },
   glossary: { title: "Glossary", description: "Short definitions of the terms used in version control." },
+  example: {
+    title: "Example: AgroFarm",
+    description: "A full farm management system managed on GitHub, step by step, with branch graphs and flowcharts.",
+  },
   tracks: {
     title: "Learning tracks",
     description: "Separate Beginner, Intermediate, Advanced, Pro Max and Enterprise learning paths.",

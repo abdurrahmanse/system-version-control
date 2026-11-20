@@ -1,0 +1,41 @@
+name: Deploy
+
+# Manual deploy to Vercel. The normal flow is Vercel's own Git integration (preview on pull requests,
+# production on main). Use this when you want a deploy that is gated by the GitHub "production" environment.
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Where to deploy
+        type: choice
+        options: [preview, production]
+        default: preview
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ inputs.environment }}
+  cancel-in-progress: false
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+jobs:
+  deploy:
+    name: Deploy to ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm dlx vercel pull --yes --environment=${{ inputs.environment == 'production' && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
+      - run: pnpm dlx vercel build ${{ inputs.environment == 'production' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
+      - run: pnpm dlx vercel deploy --prebuilt ${{ inputs.environment == 'production' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}

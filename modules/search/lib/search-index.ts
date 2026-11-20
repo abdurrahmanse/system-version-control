@@ -1,4 +1,5 @@
 import { lessonCode, lessonHref, LESSONS, stepHref, STEPS, TERMS, termSlug } from "@/modules/curriculum";
+import { EXAMPLE_PAGES } from "@/modules/example";
 import { TRACKS } from "@/modules/tracks";
 import { ALL_NAV } from "@/shared/config/site";
 import { type UI } from "@/shared/data/ui";
@@ -46,6 +47,14 @@ export function buildSearchIndex(): SearchItem[] {
       subtitle: t.definition,
       href: `/glossary/${termSlug(t.term)}`,
       keywords: `${t.term} ${t.definition}`,
+    })),
+    ...EXAMPLE_PAGES.map((page) => ({
+      id: `example-${page.slug}`,
+      group: "pages" as const,
+      title: `AgroFarm: ${page.title}`,
+      subtitle: page.text,
+      href: `/example/${page.slug}`,
+      keywords: `${page.title} ${page.text} example agrofarm github project`,
     })),
     ...TRACKS.map((track) => ({
       id: `track-${track.slug}`,

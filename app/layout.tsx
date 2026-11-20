@@ -9,6 +9,7 @@ import { buildSearchIndex, SearchPalette } from "@/modules/search";
 import { JsonLd, SiteFooter, SiteHeader, SkipLink } from "@/modules/shell";
 import { env } from "@/shared/config/env";
 import { SITE } from "@/shared/config/site";
+import { RouteLoader } from "@/shared/motion/route-loader";
 import { ScrollProgress } from "@/shared/motion/scroll-progress";
 
 const rajdhani = Rajdhani({ variable: "--font-rajdhani", subsets: ["latin"], weight: ["600", "700"], display: "swap" });
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <JsonLd />
         <Providers>
           <ScrollProgress />
+          <RouteLoader />
           <SiteHeader />
           <SiteBreadcrumbs />
           <div className="flex flex-1 flex-col">{children}</div>

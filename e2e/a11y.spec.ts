@@ -4,6 +4,8 @@ import { expect, test } from "@playwright/test";
 const PAGES = [
   "/",
   "/tracks",
+  "/example/branches",
+  "/example/ci-cd",
   "/tracks/beginner/practice",
   "/roadmap",
   "/roadmap/undo",

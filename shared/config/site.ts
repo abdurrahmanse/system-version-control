@@ -17,6 +17,7 @@ import {
   Package,
   Route,
   ScrollText,
+  Sprout,
   Swords,
   Terminal,
   TriangleAlert,
@@ -123,8 +124,18 @@ export const NAV_GROUPS: NavGroup[] = [
   },
 ];
 
+// Links shown directly in the header bar, next to the mega-menu groups.
+export const PRIMARY_LINKS: NavItem[] = [
+  {
+    href: "/example",
+    label: "Example",
+    description: "A real product managed on GitHub, step by step.",
+    icon: Sprout,
+  },
+];
+
 export const HOME_NAV: NavItem = { href: "/", label: "Home", description: "Back to the start.", icon: Library };
-export const ALL_NAV: NavItem[] = [HOME_NAV, ...NAV_GROUPS.flatMap((g) => g.items)];
+export const ALL_NAV: NavItem[] = [HOME_NAV, ...PRIMARY_LINKS, ...NAV_GROUPS.flatMap((g) => g.items)];
 export const FOOTER_LINKS = [
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },

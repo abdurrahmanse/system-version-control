@@ -12,6 +12,7 @@ const DEVICES = [
 const ROUTES = [
   "/",
   "/tracks/beginner",
+  "/example/branches",
   "/roadmap",
   "/roadmap/undo",
   "/guide",

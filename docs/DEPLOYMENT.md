@@ -88,3 +88,18 @@ To reproduce a Vercel build locally from a clean checkout:
 git clone <repo> /tmp/svc && cd /tmp/svc
 pnpm install --frozen-lockfile && pnpm build
 ```
+
+## GitHub Actions (CI/CD)
+
+| Workflow | When | What it does |
+| --- | --- | --- |
+| `ci.yml` | pull request, push to `main`, manual | lint, format, types, architecture, unused code, unit tests, build, then end-to-end and accessibility tests. The final job **CI passed** is the single check to require. |
+| `codeql.yml` | pull request, push to `main`, weekly | CodeQL code scanning for JavaScript and TypeScript. |
+| `dependency-review.yml` | pull request | Fails when a pull request adds a dependency with a high-severity vulnerability. |
+| `deploy.yml` | manual only | Optional Vercel deploy to `preview` or `production` through a GitHub environment. |
+
+Normal deploys need no workflow: Vercel's Git integration deploys previews for pull requests and production for `main`.
+
+To use `deploy.yml`, add the repository secrets `VERCEL_TOKEN`, `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID`, and create a `production` environment with required reviewers.
+
+Recommended branch rule for `main`: require a pull request and the status check **CI passed**.
