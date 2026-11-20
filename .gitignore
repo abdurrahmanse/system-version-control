@@ -22,7 +22,13 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+*.tgz
+*.log
+.eslintcache
+.cache/
+.turbo/
 
 # debug
 npm-debug.log*
@@ -30,11 +36,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files: ignore real ones, keep the template
+.env
+.env.*
+!.env.example
 
 # vercel
-.vercel
+/.vercel
 
 # typescript
 *.tsbuildinfo
@@ -44,3 +52,19 @@ next-env.d.ts
 /test-results/
 /playwright-report/
 /coverage/
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# AI tools: keep shared config, ignore personal files
+.claude/settings.local.json
+.claude/worktrees/
+CLAUDE.local.md
+
+# coverage and reports
+/.nyc_output/
+/lighthouse/
+/storybook-static/

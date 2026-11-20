@@ -1,0 +1,16 @@
+# Normalise line endings so Windows and macOS contributors get the same diffs.
+* text=auto eol=lf
+
+# Binary files: never convert or diff as text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+
+# Generated files: collapse in diffs and exclude from language stats.
+pnpm-lock.yaml -diff linguist-generated
+docs/GUIDE.md linguist-generated
