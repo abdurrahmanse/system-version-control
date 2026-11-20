@@ -9,7 +9,7 @@ export const PRACTICE_HERO: HeroCopy = {
   description:
     "Drag the steps into the correct sequence. Real workflows, rehearsed safely. Solved challenges count towards your progress.",
   primary: { label: "Start practising", href: "#challenges" },
-  secondary: { label: "Read the 100-step guide", href: "/guide" },
+  secondary: { label: "Read the 150-step guide", href: "/guide" },
 };
 
 export const PRACTICE_UI = {

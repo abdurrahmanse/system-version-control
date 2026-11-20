@@ -53,12 +53,12 @@ describe("learning path", () => {
   it("recommends lesson 1 first, then the next unlocked lesson", () => {
     expect(nextLesson(new Set())?.n).toBe(1);
     expect(nextLesson(new Set([1, 2, 3]))?.n).toBe(4);
-    expect(nextLesson(new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]))).toBeUndefined();
+    expect(nextLesson(new Set(Array.from({ length: 25 }, (_, i) => i + 1)))).toBeUndefined();
   });
 
   it("lists every lesson in order with its steps", () => {
     const path = learningPath();
     expect(path.map((p) => p.lesson.n)).toEqual(LESSONS.map((l) => l.n));
-    expect(path.reduce((sum, p) => sum + p.stepCount, 0)).toBe(100);
+    expect(path.reduce((sum, p) => sum + p.stepCount, 0)).toBe(150);
   });
 });

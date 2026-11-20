@@ -7,9 +7,9 @@ export const HOME_HERO: HeroCopy = {
   icon: GitCommitHorizontal,
   title: { top: "Learn version control,", bottom: "from zero to", accent: "Pro Max." },
   description:
-    "A field guide with a real repository to practice on. Fifteen lessons and a 100-step command guide take you from your first commit to bisect, rebase, CI and open-source pull requests.",
+    "A field guide with a real repository to practice on. Twenty-five lessons and a 150-step command guide take you from your first commit to enterprise governance, supply-chain security and recovery.",
   primary: { label: "Start the roadmap", href: "/roadmap", icon: Route },
-  secondary: { label: "Open the 100-step guide", href: "/guide", icon: Terminal },
+  secondary: { label: "Open the 150-step guide", href: "/guide", icon: Terminal },
   command: "git init",
 };
 

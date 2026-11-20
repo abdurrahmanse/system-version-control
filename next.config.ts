@@ -29,6 +29,13 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      { source: "/enterprise/:path*", destination: "/tracks/enterprise", permanent: true },
+      { source: "/path", destination: "/tracks", permanent: true },
+      { source: "/path/:level", destination: "/tracks/:level", permanent: true },
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

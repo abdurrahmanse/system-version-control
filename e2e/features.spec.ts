@@ -7,7 +7,7 @@ test("search palette finds a lesson and navigates", async ({ page }) => {
   const hit = page.getByRole("option", { name: /rebase/i }).first();
   await expect(hit).toBeVisible(); // results come from /api/search after a short debounce
   await hit.click();
-  await expect(page).toHaveURL(/roadmap|guide|glossary/);
+  await expect(page).toHaveURL(/roadmap|guide|glossary|tracks/);
 });
 
 test("guide filter is stored in the URL", async ({ page }) => {

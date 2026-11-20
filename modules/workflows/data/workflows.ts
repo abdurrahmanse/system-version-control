@@ -22,7 +22,7 @@ export const WORKFLOWS_HERO: HeroCopy = {
   description:
     "Branching strategies, merging, pull requests, undoing mistakes and releasing: one short page each, drawn as diagrams you can click through.",
   primary: { label: "Practice the flow", href: "/practice", icon: GitPullRequest },
-  secondary: { label: "See the 100-step guide", href: "/guide" },
+  secondary: { label: "See the 150-step guide", href: "/guide" },
 };
 
 export const WF_LANE_LABELS = {

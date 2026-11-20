@@ -81,4 +81,38 @@ export const TERMS: Term[] = [
     definition: "An additional working folder linked to the same repository, for another branch.",
     see: "git worktree",
   },
+  {
+    term: "Ruleset",
+    definition: "An organization or repository policy that restricts branch, tag or pull request actions.",
+  },
+  {
+    term: "CODEOWNERS",
+    definition: "Repository ownership rules that request or require review from named teams or users.",
+  },
+  { term: "SCIM", definition: "Identity provisioning protocol used to create, update and remove managed user access." },
+  {
+    term: "OIDC",
+    definition: "Federated identity exchange that lets GitHub Actions request short-lived cloud credentials.",
+  },
+  {
+    term: "Attestation",
+    definition: "Signed evidence binding a software artifact to its source, build or provenance.",
+  },
+  { term: "SBOM", definition: "A software bill of materials listing components and dependencies in a release." },
+  {
+    term: "Audit log",
+    definition: "A record of administrative and security-relevant GitHub organization or enterprise events.",
+  },
+  {
+    term: "Recovery objective",
+    definition: "A target for maximum data loss (RPO) or restoration time (RTO) after an incident.",
+  },
+  {
+    term: "Supply chain",
+    definition: "The people, systems, dependencies and artifacts that create and deliver software.",
+  },
+  {
+    term: "Migration",
+    definition: "A controlled move of repository history and platform settings from one source to a destination.",
+  },
 ];

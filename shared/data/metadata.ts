@@ -1,14 +1,14 @@
 export const PAGE_META = {
   path: {
     title: "Learning path",
-    description: "Fifteen lessons in order, each with four small steps: read, run, practise, finish.",
+    description: "Twenty-five lessons in order, each with four small steps: read, run, practise, finish.",
   },
   roadmap: {
     title: "Roadmap",
-    description: "Fifteen lessons across four levels, from your first commit to open-source contributions.",
+    description: "Twenty-five lessons across five tracks, from your first commit to enterprise GitHub operations.",
   },
   guide: {
-    title: "100-step guide",
+    title: "150-step guide",
     description: "Every Git and GitHub command, step by step, with explanations and warnings.",
   },
   concepts: { title: "Concepts", description: "The mental models behind Git: snapshots, pointers, areas and remotes." },
@@ -17,6 +17,10 @@ export const PAGE_META = {
     description: "Branching strategies, merge types, pull request lifecycle and releases.",
   },
   glossary: { title: "Glossary", description: "Short definitions of the terms used in version control." },
+  tracks: {
+    title: "Learning tracks",
+    description: "Separate Beginner, Intermediate, Advanced, Pro Max and Enterprise learning paths.",
+  },
   practice: { title: "Practice", description: "Interactive challenges: put Git commands in the correct order." },
   progress: { title: "Progress", description: "Your learning progress, saved in your browser." },
   packages: {

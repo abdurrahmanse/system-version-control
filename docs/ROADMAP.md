@@ -65,6 +65,21 @@
 
 **কোর্স-সমাপ্তি মানদণ্ড (ক্যাপস্টোন):** [লেসন ১৫](lessons/15-security-and-workflows.md)-এর ছয়টা কাজ সম্পন্ন।
 
+## V. Enterprise: GitHub platform operations
+
+| # | লেসন | মূল দক্ষতা | প্রজেক্ট টাস্ক |
+|---|---|---|---|
+| ১৬ | Organization architecture | Enterprise, organization, team ও repository topology | Ownership এবং permission model আঁকুন |
+| ১৭ | Identity and access | SSO, SCIM, roles এবং lifecycle access | Joiner-mover-leaver matrix বানান |
+| ১৮ | Repository governance | Templates, properties, CODEOWNERS এবং lifecycle | Repository creation standard বানান |
+| ১৯ | Rulesets | Branch rules, required checks এবং bypass | Production ruleset ডিফাইন করুন |
+| ২০ | Enterprise CI/CD | Reusable workflows, OIDC এবং environments | Secure promotion flow ডিজাইন করুন |
+| ২১ | Supply-chain security | Actions, SBOM, attestations এবং releases | Supply-chain baseline বানান |
+| ২২ | Security and compliance | Alert SLAs, audit evidence এবং remediation | Compliance evidence checklist বানান |
+| ২৩ | Migration | Inventory, waves, cutover এবং rollback | Migration runbook বানান |
+| ২৪ | Backup and recovery | RPO/RTO, mirrors এবং restore drill | একটি restore exercise চালান |
+| ২৫ | Enterprise capstone | Organization-wide GitHub operating model | 90-day enterprise adoption blueprint |
+
 ## সমান্তরাল ট্র্যাক: প্যাকেজ (Next.js শেখা)
 ৩৯টা ইনস্টল-করা প্যাকেজ আপনি **একটা একটা করে, প্রতিটি আলাদা ব্রাঞ্চ + PR-এ** চালু করবেন: [PACKAGES.md](PACKAGES.md)। এতে Git অনুশীলন ও Next.js শেখা একসাথে হয়।
 

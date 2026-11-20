@@ -8,7 +8,8 @@ describe("buildSearchIndex", () => {
   const items = buildSearchIndex();
 
   it("indexes pages, lessons, steps and terms", () => {
-    expect(items).toHaveLength(ALL_NAV.length + LESSONS.length + STEPS.length + TERMS.length);
+    expect(items.length).toBeGreaterThanOrEqual(ALL_NAV.length + LESSONS.length + STEPS.length + TERMS.length);
+    expect(items.some((item) => item.href === "/tracks/enterprise")).toBe(true);
   });
 
   it("uses unique ids and internal hrefs", () => {

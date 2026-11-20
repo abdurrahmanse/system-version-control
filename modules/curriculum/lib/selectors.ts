@@ -46,7 +46,6 @@ const slugify = (text: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-export const levelSlug = (level: Level) => slugify(level);
 export const levelFromSlug = (slug: string) => LEVELS.find((l) => slugify(l.name) === slug);
 
 export const termSlug = (term: string) => slugify(term);

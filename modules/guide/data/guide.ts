@@ -3,7 +3,7 @@ import { ListChecks, Terminal } from "lucide-react";
 import type { HeroCopy } from "@/shared/types/content";
 
 export const GUIDE_HERO: HeroCopy = {
-  badge: "100 steps · 10 chapters",
+  badge: "150 steps · 15 chapters",
   icon: ListChecks,
   title: { top: "Every command,", bottom: "step by", accent: "step." },
   description:
@@ -18,7 +18,7 @@ export const GUIDE_INDEX = {
   title: "Ten chapters, one hundred steps",
   description: "Follow them in order, or search below for a specific command.",
   searchEyebrow: "Find a command",
-  searchTitle: "Search all 100 steps",
+  searchTitle: "Search all 150 steps",
   searchDescription: "Filter by text. The filter is stored in the URL so you can share it.",
   searchNumeral: "II",
 } as const;

@@ -30,3 +30,15 @@
 
 ## প্যাকেজ গাইড (লেসনের সমান্তরালে)
 [docs/PACKAGES.md](PACKAGES.md)-এর প্যাকেজগুলো একটা একটা করে চালু করুন। প্রতিটি আলাদা ব্রাঞ্চ + PR-এ (এটাই আপনার অনুশীলন)।
+
+## পর্ব ৫: Enterprise GitHub
+- [ ] [লেসন ১৬: Organization Architecture](lessons/16-organization-architecture.md)
+- [ ] [লেসন ১৭: Identity and Access](lessons/17-identity-access.md)
+- [ ] [লেসন ১৮: Repository Governance](lessons/18-repository-governance.md)
+- [ ] [লেসন ১৯: Rulesets](lessons/19-rulesets.md)
+- [ ] [লেসন ২০: Enterprise CI/CD](lessons/20-enterprise-cicd.md)
+- [ ] [লেসন ২১: Supply-chain Security](lessons/21-supply-chain.md)
+- [ ] [লেসন ২২: Security and Compliance](lessons/22-security-compliance.md)
+- [ ] [লেসন ২৩: Migration and Platform Engineering](lessons/23-migration-platform.md)
+- [ ] [লেসন ২৪: Backup and Recovery](lessons/24-backup-recovery.md)
+- [ ] [লেসন ২৫: Enterprise Capstone](lessons/25-enterprise-capstone.md)

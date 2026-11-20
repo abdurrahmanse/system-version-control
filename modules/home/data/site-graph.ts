@@ -17,7 +17,7 @@ export const SITE_GRAPH_NODES: GraphNodeData[] = [
   {
     id: "roadmap",
     title: "Roadmap",
-    text: "Fifteen lessons, level by level.",
+    text: "Twenty-five lessons, track by track.",
     href: "/roadmap",
     icon: Route,
     col: 1,
@@ -27,7 +27,7 @@ export const SITE_GRAPH_NODES: GraphNodeData[] = [
   {
     id: "guide",
     title: "Guide",
-    text: "All 100 commands, step by step.",
+    text: "All 150 commands, step by step.",
     href: "/guide",
     icon: Terminal,
     col: 1,
@@ -73,7 +73,7 @@ export const SITE_GRAPH_NODES: GraphNodeData[] = [
     id: "path",
     title: "Learning path",
     text: "Your next step, always one click away.",
-    href: "/path",
+    href: "/tracks",
     icon: BookOpen,
     col: 3,
     row: 0,

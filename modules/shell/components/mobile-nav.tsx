@@ -2,7 +2,7 @@
 
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import { HEADER, HOME_NAV, NAV_GROUPS } from "@/shared/config/site";
 import { UI } from "@/shared/data/ui";
@@ -36,11 +36,16 @@ export function MobileNav() {
               <p className="px-3 pb-1 font-label text-xs tracking-[0.2em] text-muted-foreground uppercase">
                 {group.label}
               </p>
-              {group.items.map(({ href, label, icon: Icon }) => (
-                <Link key={href} href={href} onClick={close} className={linkClass}>
-                  <Icon className="size-4" />
-                  {label}
-                </Link>
+              {group.items.map(({ href, label, icon: Icon, section }, index) => (
+                <Fragment key={href}>
+                  {section && section !== group.items[index - 1]?.section ? (
+                    <p className="px-3 pt-3 font-label text-xs tracking-[0.2em] text-signal uppercase">{section}</p>
+                  ) : null}
+                  <Link href={href} onClick={close} className={linkClass}>
+                    <Icon className="size-4" />
+                    {label}
+                  </Link>
+                </Fragment>
               ))}
             </div>
           ))}

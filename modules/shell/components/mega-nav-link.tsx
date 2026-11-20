@@ -10,7 +10,7 @@ import { DropdownMenuItem } from "@/shared/ui/dropdown-menu";
 // One tile in a mega panel: icon, title, one-line description.
 export function MegaNavLink({ item }: { item: NavItem }) {
   const pathname = usePathname();
-  const active = pathname.startsWith(item.href);
+  const active = item.exact ? pathname === item.href : pathname.startsWith(item.href);
   const Icon = item.icon;
   return (
     <DropdownMenuItem asChild className="items-start gap-3 p-3 focus:bg-secondary">

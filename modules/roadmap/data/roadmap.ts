@@ -1,10 +1,10 @@
-import { Compass, FileText, Flag, GraduationCap, Map, Rocket, Route, Users, Zap } from "lucide-react";
+import { Building2, Compass, FileText, Flag, GraduationCap, Map, Rocket, Route, Users, Zap } from "lucide-react";
 
 import type { Level } from "@/modules/curriculum";
 import type { CtaCopy, HeroCopy } from "@/shared/types/content";
 
 export const ROADMAP_HERO: HeroCopy = {
-  badge: "15 lessons · 4 levels",
+  badge: "25 lessons · 5 tracks",
   icon: GraduationCap,
   title: { top: "The complete path,", accent: "zero to Pro Max." },
   description:
@@ -18,6 +18,7 @@ export const LEVEL_ICONS: Record<Level, typeof Compass> = {
   Intermediate: Users,
   Advanced: Zap,
   "Pro Max": Flag,
+  Enterprise: Building2,
 };
 
 export const ROADMAP_CTA: CtaCopy = {
@@ -31,7 +32,7 @@ export const ROADMAP_CTA: CtaCopy = {
 export const LESSON_PAGE = {
   eyebrow: "Lesson",
   overview: "Overview",
-  guideLink: "Open the full 100-step guide",
+  guideLink: "Open the full 150-step guide",
   projectIntro: "Do this in the practice repository, on its own branch, then open a pull request.",
 } as const;
 

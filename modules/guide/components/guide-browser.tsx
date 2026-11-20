@@ -19,7 +19,7 @@ const ALL = "all";
 const LEVEL_OPTIONS = [{ value: ALL, label: UI.filterAll }, ...LEVELS.map((l) => ({ value: l.name, label: l.name }))];
 const chapterLevel = new Map(CHAPTERS.map((c) => [c.slug, c.level]));
 
-// All 100 steps with filters: text, chapter, level, "warnings only" and "hide completed". Filters are kept in the URL.
+// All 150 steps with filters: text, chapter, level, "warnings only" and "hide completed". Filters are kept in the URL.
 export function GuideBrowser({ steps }: { steps: GuideStep[] }) {
   const [params, setParams] = useQueryStates({
     q: parseAsString.withDefault(""),

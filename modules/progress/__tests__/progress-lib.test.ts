@@ -16,7 +16,8 @@ describe("progress calculations", () => {
     const levels = levelProgress(p);
     expect(levels.find((l) => l.level === "Beginner")).toMatchObject({ done: 2, total: 4, remaining: 2 });
     expect(levels.find((l) => l.level === "Advanced")?.done).toBe(1);
-    expect(overall(p).percent).toBe(20);
+    expect(levels.find((l) => l.level === "Enterprise")).toMatchObject({ done: 0, total: 10, remaining: 10 });
+    expect(overall(p).percent).toBe(12);
   });
 });
 

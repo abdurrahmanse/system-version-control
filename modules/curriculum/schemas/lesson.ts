@@ -5,7 +5,7 @@ export const lessonDtoSchema = z.object({
   code: z.string(),
   slug: z.string(),
   title: z.string(),
-  level: z.enum(["Beginner", "Intermediate", "Advanced", "Pro Max"]),
+  level: z.enum(["Beginner", "Intermediate", "Advanced", "Pro Max", "Enterprise"]),
   summary: z.string(),
 });
 export type LessonDto = z.infer<typeof lessonDtoSchema>;

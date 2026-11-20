@@ -1,7 +1,7 @@
 export type Challenge = {
   id: string;
   title: string;
-  level: "Beginner" | "Intermediate" | "Advanced" | "Pro Max";
+  level: "Beginner" | "Intermediate" | "Advanced" | "Pro Max" | "Enterprise";
   lesson: number;
   goal: string;
   hint: string;
@@ -101,5 +101,70 @@ export const CHALLENGES: Challenge[] = [
       "git push origin main",
     ],
     initial: [4, 2, 0, 3, 1],
+  },
+  {
+    id: "audit-branch-protection",
+    lesson: 19,
+    title: "Check which rules protect main",
+    level: "Enterprise",
+    goal: "Find out which rulesets apply to main before you change anything.",
+    hint: "List the rulesets, open one, then check the rules for the branch.",
+    explanation:
+      "Read the current policy first. `gh ruleset check` shows what really applies to a branch, including inherited organization rules.",
+    correct: ["gh ruleset list", "gh ruleset view", "gh ruleset check main"],
+    initial: [2, 0, 1],
+  },
+  {
+    id: "run-deploy-workflow",
+    lesson: 20,
+    title: "Trigger a deployment workflow",
+    level: "Enterprise",
+    goal: "Run a workflow manually and watch the result.",
+    hint: "List workflows, inspect one, run it, then view the run.",
+    explanation:
+      "Manual runs need a `workflow_dispatch` trigger in the file. Inspecting the workflow first avoids running the wrong one.",
+    correct: [
+      "gh workflow list",
+      "gh workflow view deploy.yml",
+      "gh workflow run deploy.yml",
+      "gh run list --workflow deploy.yml",
+    ],
+    initial: [3, 1, 0, 2],
+  },
+  {
+    id: "verify-artifact",
+    lesson: 21,
+    title: "Verify a release artifact",
+    level: "Enterprise",
+    goal: "Download a release asset and prove it was built by your repository.",
+    hint: "Download first, then verify the attestation of the file.",
+    explanation:
+      "An attestation ties the file to the workflow that built it. Verify before you deploy or share the artifact.",
+    correct: ["gh release download v1.0.0 --repo OWNER/REPO", "gh attestation verify app.tar.gz --repo OWNER/REPO"],
+    initial: [1, 0],
+  },
+  {
+    id: "export-audit-log",
+    lesson: 22,
+    title: "Collect audit evidence",
+    level: "Enterprise",
+    goal: "Pull the organization audit log and save it as evidence.",
+    hint: "Save the full log to a file, then fingerprint it.",
+    explanation:
+      "Audit evidence must be complete, so use --paginate. A checksum proves the saved file was not changed later.",
+    correct: ["gh api orgs/ORG/audit-log --paginate > audit-log.json", "shasum -a 256 audit-log.json"],
+    initial: [1, 0],
+  },
+  {
+    id: "mirror-backup",
+    lesson: 24,
+    title: "Back up a repository as a mirror",
+    level: "Enterprise",
+    goal: "Create a full mirror and keep it up to date.",
+    hint: "Clone with --mirror, then fetch updates later.",
+    explanation:
+      "A mirror clone copies every ref, not only branches. `git remote update` refreshes it without a working tree.",
+    correct: ["git clone --mirror https://github.com/OWNER/REPO.git", "cd REPO.git", "git remote update"],
+    initial: [2, 0, 1],
   },
 ];

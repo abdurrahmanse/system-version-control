@@ -2,8 +2,15 @@ import { expect, test } from "@playwright/test";
 
 const ROUTES = [
   "/",
-  "/path",
-  "/path/beginner",
+  "/tracks",
+  "/tracks/beginner",
+  "/tracks/beginner/practice",
+  "/tracks/beginner/commands",
+  "/tracks/intermediate/tasks",
+  "/tracks/advanced/checklist",
+  "/tracks/pro-max/mistakes",
+  "/tracks/enterprise/terms",
+  "/tracks/enterprise/practice",
   "/roadmap",
   "/roadmap/setup",
   "/roadmap/setup/commands",

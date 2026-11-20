@@ -1,2 +1,10 @@
+export { LessonCommandList } from "@/modules/roadmap/components/lesson-command-list";
+export { LessonConnections } from "@/modules/roadmap/components/lesson-connections";
+export { LessonHeader } from "@/modules/roadmap/components/lesson-header";
+export { LessonPitfalls } from "@/modules/roadmap/components/lesson-pitfalls";
+export { LessonSection } from "@/modules/roadmap/components/lesson-section";
+export { LessonSources } from "@/modules/roadmap/components/lesson-sources";
+export { LessonTask } from "@/modules/roadmap/components/lesson-task";
+export { LESSON_PAGE } from "@/modules/roadmap/data/roadmap";
 export { LessonView } from "@/modules/roadmap/views/lesson-view";
 export { RoadmapView } from "@/modules/roadmap/views/roadmap-view";

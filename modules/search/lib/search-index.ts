@@ -1,4 +1,5 @@
 import { lessonCode, lessonHref, LESSONS, stepHref, STEPS, TERMS, termSlug } from "@/modules/curriculum";
+import { TRACKS } from "@/modules/tracks";
 import { ALL_NAV } from "@/shared/config/site";
 import { type UI } from "@/shared/data/ui";
 
@@ -46,5 +47,25 @@ export function buildSearchIndex(): SearchItem[] {
       href: `/glossary/${termSlug(t.term)}`,
       keywords: `${t.term} ${t.definition}`,
     })),
+    ...TRACKS.map((track) => ({
+      id: `track-${track.slug}`,
+      group: "pages" as const,
+      title: `${track.numeral} · ${track.title} track`,
+      subtitle: `${track.audience}. ${track.outcome}`,
+      href: `/tracks/${track.slug}`,
+      keywords: `${track.title} learning track ${track.audience} ${track.outcome}`,
+    })),
+    ...TRACKS.flatMap((track) =>
+      LESSONS.filter((lesson) => lesson.level === track.level).flatMap((lesson) => [
+        {
+          id: `track-${track.slug}-${lesson.n}`,
+          group: "lessons" as const,
+          title: `${track.title}: ${lesson.title}`,
+          subtitle: lesson.summary,
+          href: `/tracks/${track.slug}/${lesson.n}`,
+          keywords: `${track.title} ${lesson.title} ${lesson.summary}`,
+        },
+      ]),
+    ),
   ];
 }

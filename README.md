@@ -2,7 +2,7 @@
 
 **Learn version control from zero to Pro Max, on a real repository.**
 
-A learning platform for Git and GitHub: a 15-lesson roadmap, a 100-step command guide, concept diagrams,
+A learning platform for Git and GitHub: a 25-lesson roadmap, a 150-step command guide, concept diagrams,
 interactive practice, progress tracking and an AI mentor that must show its sources. The site is also the
 practice repository: you branch it, break it and fix it as you learn.
 
@@ -16,8 +16,8 @@ practice repository: you branch it, break it and fix it as you learn.
 
 | Area | What you get |
 |---|---|
-| **Roadmap** | 15 lessons in 4 levels, each with commands, a project task, checkpoints, pitfalls and official sources. A clickable path map and a per-lesson detail page. |
-| **100-step guide** | Every command from `git --version` to syncing a fork, in 10 chapters, with explanations, warnings, copy buttons and a shareable URL filter. |
+| **Roadmap** | 25 lessons in 5 tracks, each with commands, a project task, checkpoints, pitfalls and official sources. A clickable path map and a per-lesson detail page. |
+| **150-step guide** | Every command from `git --version` through enterprise rulesets and recovery, in 15 chapters, with explanations, warnings, copy buttons and a shareable URL filter. |
 | **Concepts and workflows** | Diagrams for the four places work lives, branches and merges, merge vs rebase, GitHub Flow, the pull request lifecycle, a decision tree for undoing mistakes and the three `reset` modes. |
 | **Practice** | Drag-and-drop challenges: put real Git workflows in the correct order. |
 | **Progress** | Charts, a sortable table, a study-goal planner and backup/restore. Stored only in your browser. |
@@ -77,8 +77,8 @@ Details and a checklist for adding a module: [docs/ARCHITECTURE.md](docs/ARCHITE
 | Document | Contents |
 |---|---|
 | [docs/ROADMAP.md](docs/ROADMAP.md) | The full learning path, zero to Pro Max |
-| [docs/GUIDE.md](docs/GUIDE.md) | The 100-step command guide (generated) |
-| [docs/lessons/](docs/lessons) | The 15 lessons in depth |
+| [docs/GUIDE.md](docs/GUIDE.md) | The 150-step command guide (generated) |
+| [docs/lessons/](docs/lessons) | The 25 lessons in depth |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Structure, rules and conventions |
 | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Deploying to Vercel, environment variables, troubleshooting |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Colours, type, components |

@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 import { CHALLENGES, CHAPTERS, LESSON_DETAILS, LESSONS, LEVELS, STEPS, TERMS } from "@/modules/curriculum";
 
 describe("guide steps", () => {
-  it("has exactly 100 steps numbered 1..100 in order", () => {
-    expect(STEPS).toHaveLength(100);
-    expect(STEPS.map((s) => s.id)).toEqual(Array.from({ length: 100 }, (_, i) => i + 1));
+  it("has exactly 150 steps numbered 1..150 in order", () => {
+    expect(STEPS).toHaveLength(150);
+    expect(STEPS.map((s) => s.id)).toEqual(Array.from({ length: 150 }, (_, i) => i + 1));
   });
 
   it("references only existing chapters and lessons", () => {
@@ -34,8 +34,8 @@ describe("guide steps", () => {
 });
 
 describe("lessons", () => {
-  it("are numbered 1..15 and have details with unique slugs", () => {
-    expect(LESSONS.map((l) => l.n)).toEqual(Array.from({ length: 15 }, (_, i) => i + 1));
+  it("are numbered 1..25 and have details with unique slugs", () => {
+    expect(LESSONS.map((l) => l.n)).toEqual(Array.from({ length: 25 }, (_, i) => i + 1));
     const slugs = Object.values(LESSON_DETAILS).map((d) => d.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
     for (const l of LESSONS) expect(LESSON_DETAILS[l.n], `lesson ${l.n}`).toBeDefined();

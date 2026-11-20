@@ -16,6 +16,16 @@ export const LESSON_PREREQUISITES: Record<number, readonly number[]> = {
   13: [12],
   14: [9],
   15: [12, 14],
+  16: [15],
+  17: [16],
+  18: [16],
+  19: [18],
+  20: [12, 19],
+  21: [20],
+  22: [17, 19, 21],
+  23: [18, 22],
+  24: [22, 23],
+  25: [20, 22, 24],
 };
 
 // Glossary terms each lesson introduces. Used to link a lesson to the glossary.
@@ -35,4 +45,14 @@ export const LESSON_TERMS: Record<number, readonly string[]> = {
   13: ["Hook", "Conventional Commits"],
   14: ["Worktree", "Detached HEAD", "Reflog"],
   15: ["Fork", "Upstream"],
+  16: ["Remote"],
+  17: ["Audit log"],
+  18: ["CODEOWNERS"],
+  19: ["Ruleset"],
+  20: ["OIDC"],
+  21: ["Attestation", "SBOM", "Supply chain"],
+  22: ["Audit log", "Ruleset"],
+  23: ["Migration", "Remote"],
+  24: ["Recovery objective", "Audit log"],
+  25: ["Ruleset", "OIDC", "Attestation"],
 };
