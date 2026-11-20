@@ -74,7 +74,7 @@ export const TRACK_HERO: HeroCopy = {
 
 export const TRACK_NAV = { label: "Learning tracks", overview: "Overview" } as const;
 
-export type TrackSection = "commands" | "tasks" | "checklist" | "mistakes" | "terms" | "practice";
+export type TrackSection = "commands" | "tasks" | "checklist" | "mistakes" | "terms" | "quiz" | "practice";
 
 // Sub-pages of every level (the roadmap itself is the level page). Labels come from the shared nav config.
 export const TRACK_SECTIONS = LEVEL_PAGES.filter((page) => page.path !== "").map((page) => ({

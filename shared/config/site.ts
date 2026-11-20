@@ -71,6 +71,7 @@ export const LEVEL_PAGES = [
   { path: "checklist", slug: "checklist", label: "Checklist", description: "Know you are done.", icon: CircleCheck },
   { path: "mistakes", slug: "mistakes", label: "Mistakes", description: "Traps to avoid.", icon: TriangleAlert },
   { path: "terms", slug: "terms", label: "Terms", description: "Words used in this level.", icon: BookOpen },
+  { path: "quiz", slug: "quiz", label: "Quiz", description: "Test what you learned.", icon: CircleHelp },
   { path: "practice", slug: "practice", label: "Practice", description: "Order the commands.", icon: Swords },
 ] as const;
 

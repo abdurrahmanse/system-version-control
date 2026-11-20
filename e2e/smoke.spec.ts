@@ -6,6 +6,7 @@ const ROUTES = [
   "/tracks/beginner",
   "/tracks/beginner/practice",
   "/tracks/beginner/commands",
+  "/tracks/beginner/quiz",
   "/tracks/intermediate/tasks",
   "/tracks/advanced/checklist",
   "/tracks/pro-max/mistakes",
