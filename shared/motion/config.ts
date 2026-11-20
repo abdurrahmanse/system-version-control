@@ -19,4 +19,4 @@ export const ROUTE_DIRECTIONS: Record<string, Direction> = {
 // Every page slides in; routes without an entry come from the right.
 export const DEFAULT_DIRECTION: Direction = "right";
 
-export const MOTION = { distance: 40, duration: 0.45, ease: [0.22, 1, 0.36, 1] as const, stagger: 0.07 } as const;
+export const MOTION = { distance: 96, duration: 0.45, ease: [0.22, 1, 0.36, 1] as const, stagger: 0.07 } as const;

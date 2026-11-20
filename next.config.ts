@@ -11,7 +11,9 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
 ];
 
+// The e2e run builds into its own folder so it never touches the `.next` that `pnpm dev` is using.
 const nextConfig: NextConfig = {
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   experimental: {
     agentFeedback: true,
     optimizePackageImports: ["lucide-react", "recharts", "date-fns", "motion"],

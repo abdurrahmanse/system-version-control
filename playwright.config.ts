@@ -13,11 +13,11 @@ export default defineConfig({
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile", use: { ...devices["Pixel 7"] }, testMatch: /smoke\.spec\.ts/ },
   ],
-  // Serves a production build. Run `pnpm build` first.
+  // Serves the production build that `pnpm test:e2e` just made in .next-e2e.
   webServer: {
-    command: `pnpm exec next start -p ${PORT}`,
+    command: `next start -p ${PORT}`,
     url: `http://localhost:${PORT}`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 120_000,
   },
 });

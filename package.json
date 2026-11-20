@@ -14,7 +14,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test",
+    "test:e2e": "NEXT_DIST_DIR=.next-e2e next build && NEXT_DIST_DIR=.next-e2e playwright test",
     "arch": "depcruise app modules shared --config .dependency-cruiser.cjs",
     "knip": "knip",
     "analyze": "next build --analyze",

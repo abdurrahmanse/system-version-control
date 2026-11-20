@@ -43,3 +43,23 @@ test("mobile menu opens", async ({ page }) => {
   await page.getByRole("button", { name: "Open menu" }).click();
   await expect(page.getByRole("link", { name: "Roadmap" }).last()).toBeVisible();
 });
+
+test("pages slide in when you move between pages of the same section", async ({ page }) => {
+  await page.goto("/tracks/beginner");
+  // Watch for the slide before navigating, so a fast animation is not missed.
+  await page.evaluate(() => {
+    const w = window as unknown as { slid: boolean };
+    w.slid = false;
+    const tick = () => {
+      for (const el of document.querySelectorAll<HTMLElement>('[style*="transform"]')) {
+        const m = new DOMMatrixReadOnly(getComputedStyle(el).transform);
+        if (Math.abs(m.m41) > 20 || Math.abs(m.m42) > 20) w.slid = true;
+      }
+      requestAnimationFrame(tick);
+    };
+    tick();
+  });
+  await page.getByRole("navigation", { name: "Learning tracks" }).getByRole("link", { name: "Quiz" }).click();
+  await expect(page).toHaveURL(/\/tracks\/beginner\/quiz/);
+  await page.waitForFunction(() => (window as unknown as { slid: boolean }).slid, undefined, { timeout: 3000 });
+});
